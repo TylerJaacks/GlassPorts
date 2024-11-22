@@ -1,0 +1,69 @@
+[GlassWare]> show tables;
++---------------------+
+| Tables_in_GlassWare |
++---------------------+
+| CompanionApp        |
+| DownloadStats       |
+| GlassApps           |
+| Users               |
++---------------------+
+4 rows in set (0.00 sec)
+
+[GlassWare]> Describe CompanionApp;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| AppName    | varchar(32)  | NO   |     | NULL    |       |
+| APKLink    | varchar(128) | YES  |     | NULL    |       |
+| GlassAppID | varchar(36)  | NO   | MUL | NULL    |       |
+| AppID      | varchar(36)  | NO   | PRI | NULL    |       |
+| Icon       | varchar(128) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+[GlassWare]> describe DownloadStats;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| Identifier | varchar(36)   | NO   | PRI | NULL    |       |
+| Rating     | varchar(1)    | YES  |     | NULL    |       |
+| Review     | varchar(1000) | YES  |     | NULL    |       |
+| GlassAppId | varchar(36)   | NO   | MUL | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+[GlassWare]> describe GlassApps;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| AppName     | varchar(32)   | NO   |     | NULL    |       |
+| ShortDesc   | varchar(280)  | YES  |     | NULL    |       |
+| LongDesc    | varchar(1000) | YES  |     | NULL    |       |
+| APKLink     | varchar(128)  | YES  |     | NULL    |       |
+| AppID       | varchar(36)   | NO   | PRI | NULL    |       |
+| Screenshots | varchar(128)  | YES  |     | NULL    |       |
+| Maintainer  | varchar(36)   | NO   | MUL | NULL    |       |
+| Icon        | varchar(128)  | YES  |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+[GlassWare]> describe Users;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| Identifier     | varchar(36)   | NO   | PRI | NULL    |       |
+| Upload         | varchar(2)    | NO   |     | NULL    |       |
+| Username       | varchar(16)   | NO   |     | NULL    |       |
+| Email          | varchar(64)   | NO   |     | NULL    |       |
+| Bio            | varchar(1000) | YES  |     | NULL    |       |
+| Location       | varchar(64)   | YES  |     | NULL    |       |
+| Twitter        | varchar(15)   | YES  |     | NULL    |       |
+| Github         | varchar(39)   | YES  |     | NULL    |       |
+| Keybase        | varchar(16)   | YES  |     | NULL    |       |
+| Discord        | varchar(40)   | YES  |     | NULL    |       |
+| LinkedIn       | varchar(29)   | YES  |     | NULL    |       |
+| Website        | varchar(64)   | YES  |     | NULL    |       |
+| Reddit         | varchar(20)   | YES  |     | NULL    |       |
+| ProfilePicture | varchar(128)  | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+14 rows in set (0.00 sec)
